@@ -55,4 +55,21 @@ public class UserDetails {
 			System.out.println("Invalid");
 		}
 	}
+
+	/*
+	 * @purpose:As a User need to follow pre defined Mobile Format - E.g. 91
+	 * 9919819801 - Country code follow by space and 10 digit number
+	 * 
+	 * @function: To check MobileNumber is Valid or not
+	 */
+	public static void isValidMobileNumber(String mobileNumber) {
+		String regex = "^[91]+[ ]?[6-9]{1}[0-9]{9}$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(mobileNumber);
+		if (matcher.matches()) {
+			System.out.println("Valid");
+		} else {
+			System.out.println("Invalid");
+		}
+	}
 }
