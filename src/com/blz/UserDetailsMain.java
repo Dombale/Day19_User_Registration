@@ -4,13 +4,14 @@ import java.util.Scanner;
 
 public class UserDetailsMain extends UserDetails {
 	static Scanner scanner = new Scanner(System.in);
-	static String firstName, lastName;
+	static String firstName, lastName, email;
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to User Registration Problem");
 		// calling method
 		userFirstName();
 		userLastName();
+		userEmail();
 	}
 
 	// UC1 Ability to add first name
@@ -25,5 +26,12 @@ public class UserDetailsMain extends UserDetails {
 		System.out.println("Enter your Last Name");
 		lastName = scanner.next();
 		UserDetails.isValidFirstName(lastName);
+	}
+
+	// UC3 Ability to add email
+	public static void userEmail() {
+		System.out.println("Enter your Email");
+		email = scanner.next();
+		UserDetails.isValidEmail(email);
 	}
 }
