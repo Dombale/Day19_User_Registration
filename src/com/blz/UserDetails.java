@@ -4,6 +4,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserDetails {
+	static String regex;
+
 	/*
 	 * @purpose: As a User need to enter a valid First Name. First name starts with
 	 * Cap and has minimum 3 characters
@@ -46,7 +48,7 @@ public class UserDetails {
 	 * @function: To check email is Valid or not
 	 */
 	public static void isValidEmail(String email) {
-		String regex = "^[a-z]+[+-_.]*[a-z]*[@][a-z]+[.][a-z]{2,4}[.]*([a-z]{2})*$";
+		regex = "^[a-z]+[+-_.]*[a-z]*[@][a-z]+[.][a-z]{2,4}[.]*([a-z]{2})*$";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(email);
 		if (matcher.matches()) {
@@ -63,7 +65,7 @@ public class UserDetails {
 	 * @function: To check MobileNumber is Valid or not
 	 */
 	public static void isValidMobileNumber(String mobileNumber) {
-		String regex = "^[91]+[ ]?[6-9]{1}[0-9]{9}$";
+		regex = "^[91]+[ ]?[6-9]{1}[0-9]{9}$";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(mobileNumber);
 		if (matcher.matches()) {
@@ -74,13 +76,14 @@ public class UserDetails {
 	}
 
 	/*
-	 * @purpose:As a User need to follow pre-defined Password rules. Rule1 – minimum
-	 * 8 Characters - NOTE – All rules must be passed
+	 * @purpose:As a User need to follow pre-defined Password rules.- NOTE – All
+	 * rules must be passed Rule1 – minimum 8 Characters Rule2 – Should have at
+	 * least 1 Upper Case
 	 * 
 	 * @function: To check password is Valid or not
 	 */
 	public static void isValidPassword(String password) {
-		String regex = "^[a-z0-9A-Z]{8,}$";
+		regex = "^[a-z](?=.*[A-Z]).{8,}$";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(password);
 		if (matcher.matches()) {
