@@ -72,4 +72,21 @@ public class UserDetails {
 			System.out.println("Invalid");
 		}
 	}
+
+	/*
+	 * @purpose:As a User need to follow pre-defined Password rules. Rule1 – minimum
+	 * 8 Characters - NOTE – All rules must be passed
+	 * 
+	 * @function: To check password is Valid or not
+	 */
+	public static void isValidPassword(String password) {
+		String regex = "^[a-z0-9A-Z]{8,}$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(password);
+		if (matcher.matches()) {
+			System.out.println("Valid");
+		} else {
+			System.out.println("Invalid");
+		}
+	}
 }
