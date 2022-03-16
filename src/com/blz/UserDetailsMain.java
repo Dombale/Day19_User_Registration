@@ -14,6 +14,7 @@ public class UserDetailsMain extends UserDetails {
 		userEmail();
 		userMobileNumber();
 		userPassword();
+		isValidAllEmail();
 
 	}
 
@@ -45,13 +46,10 @@ public class UserDetailsMain extends UserDetails {
 		UserDetails.isValidMobileNumber(mobileNumber);
 	}
 
-	/*
-	 * UC5 Ability to add Password and UC6 must have at least one upper case, UC7
-	 * have one number, UC8 with add special character.
-	 */
+	// UC5-UC8 Ability to add Password
 	public static void userPassword() {
 		System.out.println("Enter your password");
-		password = scanner.next();
+		password = scanner.nextLine();
 		UserDetails.isValidPassword(password);
 	}
 }
